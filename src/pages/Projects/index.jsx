@@ -1,13 +1,17 @@
-import React from 'react';
-import { Box, Text } from '@chakra-ui/react';
+import { Flex, Heading } from '@chakra-ui/react';
 import { MainLayout } from '../../layouts/MainLayout';
+import { ProjectList } from '../../components/ui/ProjectList';
+
+
 
 export const Projects = () => {
+
     return (
         <MainLayout>
-            <Box>
-                <Text>Hello welcome to the Projects page.</Text>
-            </Box>
-        </MainLayout>
+            <Flex flexDir='column' gap={6} py={4} w='full' justifyContent="center" mt={{ base: 16, md: 20 }}>
+                <Heading textAlign='center'>My Projects</Heading>
+                <ProjectList />
+            </Flex>
+        </MainLayout >
     )
 }

@@ -1,0 +1,16 @@
+import LUNA from '/images/luna.png'
+import KOTAGE_HOME from '/images/kotage_mockup.png'
+import KOTAGE_SOURCE from '/images/kotage_2.png'
+import KOTAGE_EDIT from '/images/kotage_3.png'
+import PAPPERMAP_1 from '/images/pappermap_home.png'
+import PAPPERMAP_2 from '/images/pappermap_mockup.png'
+import PAPPERMAP_3 from '/images/pappermap_orders.png'
+import ACACIA from '/images/acaciaMobile_mockup.png'
+import ACACIA_1 from '/images/acacia_mobile_1.webp'
+import ACACIA_2 from '/images/acacia_mobile_2.webp'
+import ACACIA_3 from '/images/acacia_mobile_3.webp'
+import ACACIA_4 from '/images/acacia_mobile_4.webp'
+import ACACIA_WEB from '/images/acaciaWeb.png'
+import LANDING from '/images/bg3.jpg'
+
+export { LUNA, KOTAGE_HOME, KOTAGE_SOURCE, KOTAGE_EDIT, PAPPERMAP_1, PAPPERMAP_2, PAPPERMAP_3, ACACIA, ACACIA_1, ACACIA_2, ACACIA_3, ACACIA_4, ACACIA_WEB, LANDING }

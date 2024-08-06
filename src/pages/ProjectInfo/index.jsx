@@ -13,7 +13,7 @@ export const ProjectInfo = () => {
     const project = projects[id - 1];
     return (
         <MainLayout>
-            <Flex flexDir='column' gap={6} py={4} w='full' justifyContent="center" mt={{ base: 16, md: 20 }}>
+            <Flex flexDir='column' gap={6} py={4} w='full' justifyContent="start" mt={{ base: 16, md: 20 }}>
                 <Heading textAlign='center'>{project.title}</Heading>
                 {project.info.map((item, index) => (
 

@@ -62,7 +62,7 @@ const styles = {
             maxW: '100vw',
             overflowX: 'hidden',
             bg: 'white',
-            backgroundImage: '/public/images/bg3.jpg',
+            backgroundImage: '/images/bg3.jpg',
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundAttachment: "fixed",

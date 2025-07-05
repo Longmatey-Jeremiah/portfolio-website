@@ -1,11 +1,9 @@
-import { Button } from "@/components/ui/button";
-import HeroSection from "./pages/Home";
+import { Home } from "./pages";
 
 function App() {
   return (
     <div className="flex min-h-svh flex-col items-center justify-center w-full">
-      <HeroSection />
-      <Button>Click me</Button>
+      <Home />
     </div>
   );
 }

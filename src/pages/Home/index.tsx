@@ -1,5 +1,5 @@
 import React from "react";
-import { HeroSection, ProjectsSection } from "@/components";
+import { HeroSection, ProjectsSection, SkillsSection } from "@/components";
 
 export const Home: React.FC = () => {
   return (
@@ -9,6 +9,9 @@ export const Home: React.FC = () => {
 
       {/* Projects section */}
       <ProjectsSection />
+
+      {/* Skills section */}
+      <SkillsSection />
     </div>
   );
 };

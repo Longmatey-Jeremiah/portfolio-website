@@ -57,7 +57,11 @@ const Firefly: React.FC<{
   );
 };
 
-export const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  onContactClick: () => void;
+}
+
+export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
   const fireflyColors = [
     "#06b6d4",
     "#3b82f6",
@@ -254,6 +258,7 @@ export const HeroSection: React.FC = () => {
               <Button
                 size="lg"
                 className="text-lg px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-semibold"
+                onClick={onContactClick}
               >
                 Let's Talk
                 <ArrowRight className="ml-2 h-5 w-5" />

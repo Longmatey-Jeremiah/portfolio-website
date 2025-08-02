@@ -117,7 +117,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 pt-20 pb-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 pt-28 pb-24">
         <div className="text-center mb-16">
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-100 to-blue-100 border border-cyan-200 mb-8">

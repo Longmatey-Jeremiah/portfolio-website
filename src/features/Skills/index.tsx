@@ -12,6 +12,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { downloadFromUrl } from "@/utils";
+import Resume from "@/assets/Jeremiah Longmatey.pdf";
 
 interface Skill {
   id: string;
@@ -283,7 +285,13 @@ const skills: Skill[] = [
   },
 ];
 
-export const SkillsSection: React.FC = () => {
+interface SkillsSectionProps {
+  onContactClick: () => void;
+}
+
+export const SkillsSection: React.FC<SkillsSectionProps> = ({
+  onContactClick,
+}) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
@@ -470,6 +478,7 @@ export const SkillsSection: React.FC = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white shadow-lg shadow-cyan-500/25"
+                onClick={() => downloadFromUrl(Resume, "Jeremiah Longmatey")}
               >
                 View Resume
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -478,6 +487,7 @@ export const SkillsSection: React.FC = () => {
                 size="lg"
                 variant="outline"
                 className="border-cyan-200 text-cyan-600 hover:bg-cyan-50"
+                onClick={onContactClick}
               >
                 Contact Me
                 <ArrowRight className="ml-2 h-4 w-4" />

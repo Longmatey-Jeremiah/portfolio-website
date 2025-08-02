@@ -10,7 +10,11 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: "Home", href: "#home", icon: <Home className="w-4 h-4" /> },
   { label: "About", href: "#about", icon: <User className="w-4 h-4" /> },
-  { label: "Projects", href: "#projects", icon: <Briefcase className="w-4 h-4" /> },
+  {
+    label: "Projects",
+    href: "#projects",
+    icon: <Briefcase className="w-4 h-4" />,
+  },
   { label: "Skills", href: "#skills", icon: <Code className="w-4 h-4" /> },
   { label: "Contact", href: "#contact", icon: <Mail className="w-4 h-4" /> },
 ];
@@ -48,9 +52,7 @@ export const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold">
-              Jeremiah Longmatey
-            </h1>
+            <h1 className="text-xl font-bold">Jeremiah Longmatey</h1>
           </div>
 
           {/* Desktop Navigation */}
@@ -60,7 +62,7 @@ export const Navbar: React.FC = () => {
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="flex items-center space-x-2 text-black/80 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-white/10"
+                  className="flex items-center space-x-2 text-black/80 hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-white/10 hover:cursor-pointer"
                 >
                   {item.icon}
                   <span>{item.label}</span>
@@ -104,4 +106,4 @@ export const Navbar: React.FC = () => {
       )}
     </nav>
   );
-}; 
+};

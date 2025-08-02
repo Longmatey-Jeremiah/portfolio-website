@@ -111,7 +111,13 @@ const categories = [
   { id: "ui/ux", name: "UI/UX Design", icon: Eye },
 ];
 
-export const ProjectsSection: React.FC = () => {
+interface ProjectsSectionProps {
+  onContactClick: () => void;
+}
+
+export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
+  onContactClick,
+}) => {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const filteredProjects =
@@ -292,6 +298,7 @@ export const ProjectsSection: React.FC = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white shadow-lg shadow-cyan-500/25"
+                onClick={onContactClick}
               >
                 Start a Project
                 <ExternalLink className="ml-2 h-4 w-4" />

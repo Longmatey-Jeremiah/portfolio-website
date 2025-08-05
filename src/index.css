@@ -152,6 +152,16 @@
   .-rotate-x-90 {
     transform: rotateX(-90deg);
   }
+
+  .scrollbar-hide {
+    /* For Webkit browsers (Chrome, Safari) */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    /* For IE, Edge and Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
 
 /* Custom Animations */
@@ -167,3 +177,4 @@
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
+

@@ -18,8 +18,8 @@ export const Home: React.FC = () => {
         className="relative min-h-screen flex items-center justify-center overflow-hidden p-6"
       >
         {/* Gradient background */}
-        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-pink-50 via-nuetral to-blue-50 opacity-40 -z-10" />
-        <div className="text-center text-black relative z-10">
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-pink-50 via-nuetral to-blue-50 opacity-40 -z-10 dark:opacity-100 dark:from-black/25 dark:via-black/1 dark:to-black/1" />
+        <div className="text-center relative z-10">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-xl max-w-2xl mx-auto">
             I'm a passionate developer focused on creating beautiful and

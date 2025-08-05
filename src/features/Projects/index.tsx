@@ -1,26 +1,8 @@
 import React, { useState } from "react";
-import {
-  ExternalLink,
-  Github,
-  Eye,
-  Code,
-  Globe,
-  Zap,
-  Star,
-} from "lucide-react";
+import { Code, Globe, Zap, Star, Eye, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-  featured: boolean;
-  category: "web" | "mobile" | "fullstack" | "ui/ux";
-}
+import { ProjectCard } from "@/components/common/ProjectCard";
+import type { Project } from "@/components/common/ProjectCard";
 
 const projects: Project[] = [
   {
@@ -126,34 +108,37 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
       : projects.filter((project) => project.category === selectedCategory);
 
   return (
-    <section className="relative py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
+    <section className="relative py-24 bg-gradient-to-br from-slate-50 via-gray-100 to-blue-50 overflow-hidden dark:from-black/1 dark:via-black/25 dark:to-black/10">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-cyan-200/30 to-blue-300/30 rounded-full blur-3xl animate-pulse"></div>
         <div
-          className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-emerald-200/30 to-teal-300/30 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "2s" }}
+          className="absolute top-20 right-10 w-172 h-172 bg-gradient-to-br from-cyan-200/10 to-blue-300/10 dark:from-gray-600/20 dark:to-blue-600/5 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: "8s" }}
+        ></div>
+        <div
+          className="absolute bottom-30 left-10 w-196 h-196 bg-gradient-to-br from-emerald-200/10 to-teal-300/10 dark:from-emerald-600/10 dark:to-teal-600/5 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "2s", animationDuration: "8s" }}
         ></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-100 to-blue-100 border border-cyan-200 mb-8">
-            <Code className="w-4 h-4 text-cyan-600 mr-2" />
-            <span className="text-sm font-medium text-cyan-700">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-100 to-blue-100 border border-cyan-200 mb-8 dark:from-cyan-900/50 dark:to-blue-900/50 dark:border-cyan-700">
+            <Code className="w-4 h-4 text-cyan-600 mr-2 dark:text-cyan-400" />
+            <span className="text-sm font-medium text-cyan-700 dark:text-cyan-300">
               Featured Work
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 dark:text-white">
             My{" "}
             <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-emerald-600 bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
 
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed dark:text-gray-400">
             Explore a collection of my latest work, showcasing innovative
             solutions and cutting-edge technologies.
           </p>
@@ -170,7 +155,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-200 font-medium ${
                   selectedCategory === category.id
                     ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25"
-                    : "bg-white/50 backdrop-blur-sm border border-gray-200/50 text-gray-700 hover:bg-white/80 hover:border-cyan-200"
+                    : "bg-white/50 backdrop-blur-sm border border-gray-200/50 text-gray-700 hover:bg-white/80 hover:border-cyan-200 dark:bg-zinc-800/50 dark:border-zinc-700/50 dark:text-gray-300 dark:hover:bg-zinc-700/50 dark:hover:border-cyan-600"
                 }`}
               >
                 <Icon className="w-4 h-4" />
@@ -181,116 +166,19 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              className="group relative bg-white/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200/50 hover:border-cyan-200/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10 hover:-translate-y-2"
-            >
-              {/* Project Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                {/* Featured Badge */}
-                {project.featured && (
-                  <div className="absolute top-4 left-4">
-                    <div className="flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-amber-400 to-orange-500 text-white text-xs font-medium rounded-full">
-                      <Star className="w-3 h-3" />
-                      Featured
-                    </div>
-                  </div>
-                )}
-
-                {/* Action Buttons */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {project.liveUrl && (
-                    <Button
-                      size="sm"
-                      className="bg-white/90 text-gray-900 hover:bg-white"
-                      onClick={() => window.open(project.liveUrl, "_blank")}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-1" />
-                      Live Demo
-                    </Button>
-                  )}
-                  {project.githubUrl && (
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="border-white/90 text-white hover:bg-white/10"
-                      onClick={() => window.open(project.githubUrl, "_blank")}
-                    >
-                      <Github className="w-4 h-4 mr-1" />
-                      Code
-                    </Button>
-                  )}
-                </div>
-              </div>
-
-              {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-cyan-600 transition-colors duration-200">
-                  {project.title}
-                </h3>
-
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-gradient-to-r from-cyan-100 to-blue-100 text-cyan-700 text-xs font-medium rounded-full border border-cyan-200/50"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Project Links */}
-                <div className="flex gap-3">
-                  {project.liveUrl && (
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="flex-1 border-cyan-200 text-cyan-600 hover:bg-cyan-50"
-                      onClick={() => window.open(project.liveUrl, "_blank")}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      View Live
-                    </Button>
-                  )}
-                  {project.githubUrl && (
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="flex-1 border-gray-200 text-gray-600 hover:bg-gray-50"
-                      onClick={() => window.open(project.githubUrl, "_blank")}
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      View Code
-                    </Button>
-                  )}
-                </div>
-              </div>
-            </div>
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 max-w-2xl mx-auto dark:bg-zinc-700/20 dark:border-zinc-700/50">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white">
               Have a project in mind?
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6 dark:text-gray-400">
               Let's collaborate and bring your ideas to life with cutting-edge
               technology and exceptional design.
             </p>
@@ -306,7 +194,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               <Button
                 size="lg"
                 variant="outline"
-                className="border-cyan-200 text-cyan-600 hover:bg-cyan-50"
+                className="border-cyan-200 text-cyan-600 hover:bg-cyan-50 dark:border-cyan-700 dark:text-cyan-400 dark:hover:bg-cyan-900/20"
               >
                 View More Work
                 <Eye className="ml-2 h-4 w-4" />

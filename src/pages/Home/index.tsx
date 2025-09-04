@@ -120,6 +120,12 @@ export const Home: React.FC = () => {
           </button>
         </div>
       </section> */}
+
+      {/* Copyright */}
+      <footer className="w-full py-6 text-center text-muted-foreground text-sm">
+        © {new Date().getFullYear()} Jeremiah Longmatey. All rights reserved.
+      </footer>
+
       <ContactModal
         open={showContactModal}
         onClose={() => setShowContactModal(false)}

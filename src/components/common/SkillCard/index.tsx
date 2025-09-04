@@ -31,10 +31,10 @@ interface SkillCardProps {
 
 export const SkillCard: React.FC<SkillCardProps> = ({
   skill,
-  getCategoryColor,
+  // getCategoryColor,
   getProficiencyColor,
   getProficiencyText,
-  skillCategories,
+  // skillCategories,
   //   setHoveredSkill,
 }) => {
   return (

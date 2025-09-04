@@ -1,6 +1,59 @@
 import React, { useState } from "react";
-import { HeroSection, ProjectsSection, SkillsSection } from "@/components";
-import ContactModal from "@/components/common/ContactModal";
+import { ProjectsSection, SkillsSection } from "@/features";
+import { ContactModal, HeroSection, FeatureCard } from "@/components/common";
+import {
+  ArrowRight,
+  Brain,
+  BriefcaseBusiness,
+  Lightbulb,
+  TrendingUp,
+  Users,
+} from "lucide-react";
+
+const features = [
+  {
+    title: "Leadership & Mentorship",
+    description:
+      "I naturally take initiative, lead teams, and enjoy mentoring others to help them grow and succeed.",
+    icon: Users,
+    iconColor: "text-blue-500",
+  },
+  {
+    title: "Collaboration",
+    description:
+      "I thrive in team environments, working closely with engineers, designers, and stakeholders to deliver cohesive, high-quality products.",
+    icon: BriefcaseBusiness,
+    iconColor: "text-green-500",
+  },
+  {
+    title: "Problem-Solving",
+    description:
+      "I proactively identify challenges, resolve bugs efficiently, and streamline processes to ensure system stability and user satisfaction.",
+    icon: Lightbulb,
+    iconColor: "text-yellow-500",
+  },
+  {
+    title: "Adaptability",
+    description:
+      "I quickly learn new technologies and adapt to changing project requirements, always seeking ways to improve and innovate.",
+    icon: Brain,
+    iconColor: "text-purple-500",
+  },
+  {
+    title: "Technical Excellence",
+    description:
+      "I build scalable, maintainable, and user-friendly interfaces using modern tools like React, TypeScript, and Tailwind CSS.",
+    icon: TrendingUp,
+    iconColor: "text-red-500",
+  },
+  {
+    title: "Productivity & Efficiency",
+    description:
+      "I leverage AI and automation to accelerate development workflows and boost team productivity.",
+    icon: ArrowRight,
+    iconColor: "text-orange-500",
+  },
+];
 
 export const Home: React.FC = () => {
   const [showContactModal, setShowContactModal] = useState(false);
@@ -15,53 +68,30 @@ export const Home: React.FC = () => {
       {/* About section - placeholder */}
       <section
         id="about"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden p-6"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
       >
         {/* Gradient background */}
-        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-pink-50 via-nuetral to-blue-50 opacity-40 -z-10 dark:opacity-100 dark:from-black/25 dark:via-black/1 dark:to-black/1" />
-        <div className="text-center relative z-10">
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-pink-50 via-nuetral to-blue-50 opacity-40 -z-10 dark:opacity-100 dark:from-black/5 dark:via-black/1 dark:to-black/25" />
+        <div className="text-center relative z-10 max-w-7xl mx-auto p-6">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
-          <p className="text-xl max-w-2xl mx-auto">
-            I'm a passionate developer focused on creating beautiful and
-            functional web experiences.
+          <p className="text-md leading-relaxed mb-8 max-w-4xl mx-auto text-muted-foreground">
+            My journey in software development has been driven by a passion for
+            creating innovative solutions and a commitment to continuous
+            learning. I specialize in building robust, scalable, and
+            user-centric applications, always striving for excellence in every
+            line of code.
           </p>
-          {/* Qualities summary */}
-          <div className="mt-8 text-left max-w-2xl mx-auto ">
-            <h3 className="text-2xl font-semibold mb-4">What Sets Me Apart</h3>
-            <ul className="space-y-6 list-disc list-inside">
-              <li>
-                <span className="font-bold">Leadership & Mentorship:</span> I
-                naturally take initiative, lead teams, and enjoy mentoring
-                others to help them grow and succeed.
-              </li>
-              <li>
-                <span className="font-bold">Collaboration:</span> I thrive in
-                team environments, working closely with engineers, designers,
-                and stakeholders to deliver cohesive, high-quality products.
-              </li>
-              <li>
-                <span className="font-bold">Problem-Solving:</span> I
-                proactively identify challenges, resolve bugs efficiently, and
-                streamline processes to ensure system stability and user
-                satisfaction.
-              </li>
-              <li>
-                <span className="font-bold">Adaptability:</span> I quickly learn
-                new technologies and adapt to changing project requirements,
-                always seeking ways to improve and innovate.
-              </li>
-              <li>
-                <span className="font-bold">Technical Excellence:</span> I build
-                scalable, maintainable, and user-friendly interfaces using
-                modern tools like React, TypeScript, and Tailwind CSS.
-              </li>
-              <li>
-                <span className="font-bold">Productivity & Efficiency:</span> I
-                leverage AI and automation to accelerate development workflows
-                and boost team productivity.
-              </li>
-            </ul>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.map((feature, index) => (
+              <FeatureCard key={index} {...feature} />
+            ))}
           </div>
+
+          <p className="text-lg leading-relaxed mt-8 mb-4">
+            Beyond technical skills, I bring a unique blend of leadership,
+            creativity, and strategic thinking to every project.
+          </p>
         </div>
       </section>
 

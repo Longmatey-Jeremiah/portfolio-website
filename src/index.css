@@ -117,6 +117,20 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Custom Scrollbar Styles */
+  body::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: oklch(0.280 0 0); /* A subtle grey for visibility */
+    border-radius: 10px;
+  }
 }
 
 /* Custom 3D Avatar Styles */

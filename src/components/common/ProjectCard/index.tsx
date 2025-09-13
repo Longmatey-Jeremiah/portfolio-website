@@ -1,5 +1,5 @@
 import React from "react";
-import { ExternalLink, Github, Star } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export interface Project {
@@ -25,7 +25,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       className="group relative bg-white/50 dark:bg-secondary dark:bg-gradient-to-br dark:from-gray-700/5 dark:via-gray-700/15 dark:to-gray-700/30 backdrop-blur-sm dark:bg-transparent rounded-2xl overflow-hidden border border-gray-200/50 hover:border-cyan-200/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10 hover:-translate-y-2 dark:border-zinc-700/50 dark:hover:border-cyan-700/50 dark:hover:shadow-cyan-700/10"
     >
       {/* Project Image */}
-      <div className="relative h-68 overflow-hidden">
+      <div className="relative h-60 sm:h-80 overflow-hidden">
         {/* Modern Screenshot Container */}
 
         <div className="relative group m-2">
@@ -54,11 +54,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               </div>
 
               {/* Screenshot Container */}
-              <div className="relative bg-gray-50 h-[400px] flex items-center justify-center">
+              <div className="relative flex items-center justify-center">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-fill"
+                  className="w-full h-auto object-fill"
                 />
               </div>
             </div>
@@ -67,7 +67,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {/* Subtle Background Decorative Elements */}
           <div className="absolute -top-12 -left-12 w-24 h-24 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-full opacity-20 blur-xl"></div>
           <div
-            className="absolute -bottom-12 -right-12 w-32 h-32 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full opacity-20 blur-xl animate-pulse"
+            className="absolute -bottom-12 -right-12 w-32 h-32 bg-gradient-to-br from-purple-100/20 to-pink-100/30 rounded-full opacity-20 blur-xl animate-pulse"
             style={{ animationDelay: "1s" }}
           ></div>
         </div>
@@ -131,32 +131,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </span>
           ))}
         </div>
-
-        {/* Project Links */}
-        {/* <div className="flex gap-3">
-          {project.liveUrl && (
-            <Button
-              size="sm"
-              variant="outline"
-              className="flex-1 border-cyan-200 text-cyan-600 hover:bg-cyan-50 dark:border-cyan-700 dark:text-cyan-400 dark:hover:bg-cyan-900/20"
-              onClick={() => window.open(project.liveUrl, "_blank")}
-            >
-              <ExternalLink className="w-4 h-4 mr-2" />
-              View Live
-            </Button>
-          )}
-          {project.githubUrl && (
-            <Button
-              size="sm"
-              variant="outline"
-              className="flex-1 border-gray-200 text-gray-600 hover:bg-gray-50 dark:border-zinc-700 dark:text-gray-300 dark:hover:bg-zinc-800/20"
-              onClick={() => window.open(project.githubUrl, "_blank")}
-            >
-              <Github className="w-4 h-4 mr-2" />
-              View Code
-            </Button>
-          )}
-        </div> */}
       </div>
     </div>
   );

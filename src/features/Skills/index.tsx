@@ -12,8 +12,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { downloadFromUrl } from "@/utils";
-import Resume from "@/assets/Jeremiah Longmatey.pdf";
 import { SkillCard } from "@/components/common/SkillCard";
 
 interface Skill {
@@ -266,21 +264,12 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({
   const getProficiencyText = (proficiency: number) => {
     if (proficiency >= 90) return "Expert";
     if (proficiency >= 80) return "Advanced";
-    if (proficiency >= 70) return "Intermediate";
+    if (proficiency >= 60) return "Intermediate";
     return "Beginner";
   };
 
   return (
     <section className="relative py-24 bg-gradient-to-tr from-slate-100 via-white to-blue-50 overflow-hidden dark:from-black/15 dark:via-black/25 dark:to-black/5">
-      {/* Background Elements */}
-      {/* <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-cyan-200/30 to-blue-300/30 rounded-full blur-3xl animate-pulse"></div>
-        <div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-emerald-200/30 to-teal-300/30 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "2s" }}
-        ></div>
-      </div> */}
-
       <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -362,14 +351,15 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({
               project to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white shadow-lg shadow-cyan-500/25"
-                onClick={() => downloadFromUrl(Resume, "Jeremiah Longmatey")}
-              >
-                View Resume
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <a href="/JeremiahLongmatey.pdf">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white shadow-lg shadow-cyan-500/25"
+                >
+                  View Resume
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
               <Button
                 size="lg"
                 variant="outline"

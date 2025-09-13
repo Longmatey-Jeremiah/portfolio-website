@@ -75,11 +75,10 @@ export const Home: React.FC = () => {
         <div className="text-center relative z-10 max-w-7xl mx-auto p-6">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-md leading-relaxed mb-8 max-w-4xl mx-auto text-muted-foreground">
-            My journey in software development has been driven by a passion for
-            creating innovative solutions and a commitment to continuous
-            learning. I specialize in building robust, scalable, and
-            user-centric applications, always striving for excellence in every
-            line of code.
+            My journey in software development is fueled by a passion for
+            crafting innovative solutions and a drive for continuous learning. I
+            focus on building robust, scalable, and user-centric applications
+            that truly make an impact.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -122,8 +121,20 @@ export const Home: React.FC = () => {
       </section> */}
 
       {/* Copyright */}
-      <footer className="w-full py-6 text-center text-muted-foreground text-sm">
-        © {new Date().getFullYear()} Jeremiah Longmatey. All rights reserved.
+      <footer
+        className="w-full py-6 text-center text-muted-foreground text-sm relative overflow-hidden"
+        style={{
+          backgroundImage: `url('/src/assets/Cotton.svg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <div className="absolute inset-0 bg-white dark:bg-black opacity-75" />{" "}
+        {/* Overlay for better text readability */}
+        <div className="relative z-10">
+          © {new Date().getFullYear()} Jeremiah Longmatey. All rights reserved.
+        </div>
       </footer>
 
       <ContactModal

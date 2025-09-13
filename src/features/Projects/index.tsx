@@ -7,26 +7,25 @@ import type { Project } from "@/components/common/ProjectCard";
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Papermap Inventory",
     description:
       "A modern e-commerce platform built with React, Node.js, and Stripe integration. Features include user authentication, product management, shopping cart, and payment processing.",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-    technologies: ["React", "Node.js", "TypeScript", "Stripe", "MongoDB"],
-    liveUrl: "https://example.com",
+    image: "/screenshots/papermap_inventory.png",
+    technologies: ["React", "TypeScript"],
+    liveUrl: "https://inventory.papermap.ai/",
     githubUrl: "https://github.com/example",
     featured: true,
-    category: "fullstack",
+    category: "web",
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "Papermap AI",
     description:
       "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-    image:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop",
+    image: "/screenshots/papermap.png",
+
     technologies: ["Next.js", "TypeScript", "Socket.io", "PostgreSQL"],
-    liveUrl: "https://example.com",
+    liveUrl: "https://papermap.ai",
     githubUrl: "https://github.com/example",
     featured: true,
     category: "web",
@@ -179,8 +178,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               Have a project in mind?
             </h3>
             <p className="text-gray-600 mb-6 dark:text-gray-400">
-              Let's collaborate and bring your ideas to life with cutting-edge
-              technology and exceptional design.
+              Let's link up and bring your wild ideas to life with some
+              next-level tech and 🔥 design.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

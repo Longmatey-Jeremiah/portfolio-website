@@ -1,13 +1,4 @@
-import {
-  ArrowRight,
-  Star,
-  Users,
-  Code,
-  Zap,
-  Shield,
-  Globe,
-  DownloadCloud,
-} from "lucide-react";
+import { ArrowRight, Code, Zap, Shield, DownloadCloud } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -121,8 +112,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
     radius: 10 + Math.random() * 15, // Add a random radius for each firefly
   }));
 
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    // setIsOpen(false);
+  };
+
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-200 via-white to-blue-50  overflow-hidden w-full dark:from-gray-800 dark:via-black/30 dark:to-background/40">
+    <section className="relative min-h-screen bg-gradient-to-br from-slate-200 via-white to-blue-50  overflow-hidden w-full dark:from-gray-800/1 dark:via-black/10 dark:to-background/10">
       {/* Firefly Effect */}
       <div className="absolute inset-0 pointer-events-none">
         {fireflies.map((firefly) => (
@@ -141,22 +140,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-cyan-200/40 to-blue-300/40 rounded-full blur-3xl animate-pulse dark:from-cyan-800/40 dark:to-blue-900/40"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-cyan-200/40 to-blue-300/40 rounded-full blur-3xl animate-pulse-slow dark:from-cyan-800/10 dark:to-blue-900/10"></div>
         <div
-          className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-br from-emerald-200/40 to-teal-300/40 rounded-full blur-3xl animate-pulse dark:from-emerald-800/40 dark:to-teal-900/40"
+          className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-br from-emerald-200/40 to-teal-300/40 rounded-full blur-3xl animate-pulse-slow dark:from-emerald-800/5 dark:to-teal-900/10"
           style={{ animationDelay: "2s" }}
         ></div>
         <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-blue-100/30 to-indigo-200/30 rounded-full blur-3xl animate-pulse dark:from-blue-900/30 dark:to-indigo-950/30"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-blue-100/30 to-indigo-200/30 rounded-full blur-3xl animate-pulse-slower dark:from-gray-500/15 dark:to-indigo-700/10"
           style={{ animationDelay: "4s" }}
         ></div>
         {/* Additional vibrant elements */}
         <div
-          className="absolute top-1/4 right-1/4 w-48 h-48 bg-gradient-to-br from-orange-200/30 to-red-300/30 rounded-full blur-2xl animate-pulse dark:from-orange-800/30 dark:to-red-900/30"
+          className="absolute top-1/4 right-1/4 w-48 h-48 bg-gradient-to-br from-orange-200/30 to-red-300/30 rounded-full blur-2xl animate-pulse dark:from-orange-800/10 dark:to-red-900/20"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
-          className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-cyan-200/30 to-blue-300/30 rounded-full blur-2xl animate-pulse dark:from-cyan-800/30 dark:to-blue-900/30"
+          className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-cyan-200/30 to-blue-300/30 rounded-full blur-2xl animate-pulse dark:from-cyan-800/10 dark:to-red-900/20"
           style={{ animationDelay: "3s" }}
         ></div>
       </div>
@@ -175,7 +174,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-gray-900 mb-6 leading-tight dark:text-white">
             <span className="block">Building the Future</span>
-            <span className="block bg-gradient-to-r from-cyan-600 via-blue-600 to-emerald-600 bg-clip-text text-transparent animate-pulse dark:from-cyan-400 dark:via-blue-400 dark:to-emerald-400">
+            <span className="block bg-gradient-to-r from-cyan-600 via-blue-600 to-emerald-600 bg-clip-text text-transparent animate-pulse dark:animate-pulse-slow dark:from-cyan-400/40 dark:via-blue-400 dark:to-emerald-400">
               One Pixel at a Time
             </span>
           </h1>
@@ -212,30 +211,35 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center items-center">
             <Link to="/">
               <Button
                 size="lg"
-                className="text-lg px-8 py-6 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-xl hover:shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 text-white border-0 font-medium"
+                className="text-lg px-8 py-6 bg-gradient-to-l from-emerald-500 via-neutral/10 to-blue-500 hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-xl hover:shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 text-white border-0 font-medium"
+                onClick={() => {
+                  scrollToSection("#projects");
+                }}
               >
                 View My Work
                 <ArrowRight className="ml-3 size-4 " />
               </Button>
             </Link>
             {/* <Link to="/"> */}
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 py-6 border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50 transform hover:scale-105 transition-all duration-200 backdrop-blur-sm font-semibold dark:border-emerald-400 dark:text-emerald-400 dark:hover:bg-emerald-900/20"
-            >
-              Download Resume
-              <DownloadCloud className="ml-3 size-4" />
-            </Button>
+            <a href="/JeremiahLongmatey.pdf">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-lg px-8 py-6 border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50 transform hover:scale-105 transition-all duration-200 backdrop-blur-sm font-semibold dark:border-emerald-400 dark:text-emerald-400 dark:hover:bg-emerald-900/20"
+              >
+                Download Resume
+                <DownloadCloud className="ml-3 size-4" />
+              </Button>
+            </a>
             {/* </Link> */}
           </div>
 
           {/* Enhanced Trust Indicators */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm text-gray-500 mb-16 dark:text-gray-400">
+          {/* <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm text-gray-500 mb-16 dark:text-gray-400">
             <div className="flex items-center">
               <div className="flex -space-x-1 mr-3">
                 {[...Array(4)].map((_, i) => (
@@ -263,10 +267,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
                 Global Reach
               </span>
             </div>
-          </div>
+          </div> */}
 
           {/* Featured Technologies */}
-          <div className="mb-16">
+          {/* <div className="mb-16">
             <h3 className="text-lg font-semibold text-gray-700 mb-6 dark:text-gray-300">
               Technologies I Work With
             </h3>
@@ -289,7 +293,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Call to Action */}
           <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-8 border border-cyan-200/50 dark:from-cyan-900/20 dark:to-blue-900/20 dark:border-cyan-700/50">
@@ -297,9 +301,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
               Ready to Build Something Amazing?
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto dark:text-gray-300">
-              Let's collaborate to bring your vision to life. I'm passionate
-              about creating innovative solutions that drive real business
-              value.
+              Let's link up and make some epic digital stuff happen.
             </p>
             <Link to="/">
               <Button

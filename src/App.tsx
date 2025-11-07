@@ -5,7 +5,7 @@ import { ThemeProvider } from "./providers";
 function App() {
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-      <div className="flex min-h-svh flex-col items-center justify-center w-full dark:text-white">
+      <div className="flex min-h-svh flex-col items-center justify-center w-full dark:text-white font-sans">
         <Navbar />
         <Home />
       </div>

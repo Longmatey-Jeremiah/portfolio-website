@@ -22,9 +22,9 @@ export const ContactModal: React.FC<ContactModalProps> = ({
           onClick={onClose}
           aria-label="Close"
         >
-          <span className="text-sm p-0 m-0">&times;</span>
+          <span className="text-base p-0 m-0">&times;</span>
         </Button>
-        <h4 className="text-xl font-bold text-primary mb-4 text-center">
+        <h4 className="text-2xl font-bold text-primary mb-4 text-center">
           Contact Me
         </h4>
         <div className="flex flex-col gap-4 items-center">
@@ -32,7 +32,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
             href="https://www.linkedin.com/in/jeremiah-longmatey/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 p-3 rounded-lg bg-cyan-50 dark:bg-card/50 dark:border-white/8 dark:border-2 hover:bg-cyan-100 border border-cyan-200 text-cyan-600 transition w-full justify-center"
+            className="flex items-center gap-2 p-3 rounded-lg bg-cyan-50 dark:bg-card/50 dark:border-white/8 dark:border-2 hover:bg-cyan-100 border border-cyan-200 text-cyan-600 transition w-full justify-center text-base"
             aria-label="LinkedIn"
           >
             <Linkedin className="h-5 w-5" />
@@ -40,7 +40,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
           </a>
           <a
             href="mailto:longmateyjeremiah1@gmail.com"
-            className="flex items-center gap-2 p-3 rounded-lg bg-cyan-50 dark:bg-card/50 dark:border-white/8 dark:border-2 hover:bg-cyan-100 border border-cyan-200 text-cyan-600 transition w-full justify-center"
+            className="flex items-center gap-2 p-3 rounded-lg bg-cyan-50 dark:bg-card/50 dark:border-white/8 dark:border-2 hover:bg-cyan-100 border border-cyan-200 text-cyan-600 transition w-full justify-center text-base"
             aria-label="Email"
           >
             <Mail className="h-5 w-5" />
@@ -48,7 +48,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
           </a>
           <a
             href="tel:+233543427199"
-            className="flex items-center gap-2 p-3 rounded-lg bg-cyan-50 dark:bg-card/50 dark:border-white/8 dark:border-2 hover:bg-cyan-100 border border-cyan-200 text-cyan-600 transition w-full justify-center"
+            className="flex items-center gap-2 p-3 rounded-lg bg-cyan-50 dark:bg-card/50 dark:border-white/8 dark:border-2 hover:bg-cyan-100 border border-cyan-200 text-cyan-600 transition w-full justify-center text-base"
             aria-label="Phone"
           >
             <Phone className="h-5 w-5" />
@@ -58,7 +58,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
             href="https://wa.me/233543427199"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 p-3 rounded-lg bg-green-50 dark:bg-card/50 dark:border-white/8 dark:border-2 hover:bg-green-100 border border-green-200 text-green-600 transition w-full justify-center"
+            className="flex items-center gap-2 p-3 rounded-lg bg-green-50 dark:bg-card/50 dark:border-white/8 dark:border-2 hover:bg-green-100 border border-green-200 text-green-600 transition w-full justify-center text-base"
             aria-label="WhatsApp"
           >
             <MessageCircle className="h-5 w-5" />

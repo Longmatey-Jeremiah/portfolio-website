@@ -63,7 +63,7 @@ export const Navbar: React.FC = () => {
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="flex items-center space-x-1 p-2 rounded-md text-sm hover:font-medium transition-all duration-200 hover:bg-white/10 hover:cursor-pointer"
+                  className="flex items-center space-x-1 p-2 rounded-md text-base hover:font-medium transition-all duration-200 hover:bg-white/10 hover:cursor-pointer"
                 >
                   {item.icon}
                   <span>{item.label}</span>

@@ -39,42 +39,42 @@ const skillCategories: SkillCategory[] = [
     name: "Frontend Development",
     icon: Globe,
     description: "Modern web interfaces and user experiences",
-    color: "from-cyan-500 to-blue-600",
+    color: "from-blue-500 to-blue-600",
   },
   {
     id: "backend",
     name: "Backend Development",
     icon: Code,
     description: "Server-side logic and APIs",
-    color: "from-emerald-500 to-teal-600",
+    color: "from-blue-500 to-blue-600",
   },
   {
     id: "database",
     name: "Database & Storage",
     icon: Database,
     description: "Data management and optimization",
-    color: "from-purple-500 to-indigo-600",
+    color: "from-blue-500 to-blue-600",
   },
   {
     id: "mobile",
     name: "Mobile Development",
     icon: Smartphone,
     description: "Cross-platform mobile applications",
-    color: "from-orange-500 to-red-600",
+    color: "from-blue-500 to-blue-600",
   },
   {
     id: "design",
     name: "UI/UX Design",
     icon: Palette,
     description: "User interface and experience design",
-    color: "from-pink-500 to-rose-600",
+    color: "from-blue-500 to-blue-600",
   },
   {
     id: "tools",
     name: "Tools & DevOps",
     icon: Zap,
     description: "Development tools and deployment",
-    color: "from-yellow-500 to-amber-600",
+    color: "from-blue-500 to-blue-600",
   },
 ];
 
@@ -255,9 +255,9 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({
   };
 
   const getProficiencyColor = (proficiency: number) => {
-    if (proficiency >= 90) return "from-emerald-500 to-green-600";
-    if (proficiency >= 80) return "from-blue-500 to-cyan-600";
-    if (proficiency >= 70) return "from-yellow-500 to-orange-600";
+    if (proficiency >= 90) return "from-blue-500 to-blue-600";
+    if (proficiency >= 80) return "from-blue-400 to-blue-500";
+    if (proficiency >= 70) return "from-blue-300 to-blue-400";
     return "from-gray-500 to-gray-600";
   };
 

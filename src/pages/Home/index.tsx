@@ -132,7 +132,7 @@ export const Home: React.FC = () => {
       >
         <div className="absolute inset-0 bg-white dark:bg-black opacity-75" />{" "}
         {/* Overlay for better text readability */}
-        <div className="relative z-10">
+        <div className="relative z-10 text-xs">
           © {new Date().getFullYear()} Jeremiah Longmatey. All rights reserved.
         </div>
       </footer>

@@ -140,7 +140,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-cyan-200/40 to-blue-300/40 rounded-full blur-3xl animate-pulse-slow dark:from-cyan-800/10 dark:to-blue-900/10"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-200/40 to-blue-300/40 rounded-full blur-3xl animate-pulse-slow dark:from-blue-800/10 dark:to-blue-900/10"></div>
         <div
           className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-br from-emerald-200/40 to-teal-300/40 rounded-full blur-3xl animate-pulse-slow dark:from-emerald-800/5 dark:to-teal-900/10"
           style={{ animationDelay: "2s" }}
@@ -151,11 +151,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
         ></div>
         {/* Additional vibrant elements */}
         <div
-          className="absolute top-1/4 right-1/4 w-48 h-48 bg-gradient-to-br from-orange-200/30 to-red-300/30 rounded-full blur-2xl animate-pulse dark:from-orange-800/10 dark:to-red-900/20"
+          className="absolute top-1/4 right-1/4 w-48 h-48 bg-gradient-to-br from-blue-200/30 to-blue-300/30 rounded-full blur-2xl animate-pulse dark:from-blue-800/10 dark:to-blue-900/20"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
-          className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-cyan-200/30 to-blue-300/30 rounded-full blur-2xl animate-pulse dark:from-cyan-800/10 dark:to-red-900/20"
+          className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-200/30 to-blue-300/30 rounded-full blur-2xl animate-pulse dark:from-blue-800/10 dark:to-blue-900/20"
           style={{ animationDelay: "3s" }}
         ></div>
       </div>
@@ -172,7 +172,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-gray-900 mb-6 leading-tight dark:text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 mb-6 leading-tight dark:text-white">
             <span className="block">Building the Future</span>
             <span className="block bg-gradient-to-r from-cyan-600 via-blue-600 to-emerald-600 bg-clip-text text-transparent animate-pulse dark:animate-pulse-slow dark:from-cyan-400/40 dark:via-blue-400 dark:to-emerald-400">
               One Pixel at a Time
@@ -180,10 +180,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
           </h1>
 
           {/* Enhanced Subtitle */}
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed max-w-4xl mx-auto font-medium dark:text-gray-300">
+          <p className="text-sm md:text-base text-gray-600 mb-8 leading-relaxed max-w-4xl mx-auto font-medium dark:text-gray-300">
             Crafting exceptional digital experiences with cutting-edge
             technologies.
-            <span className="block text-cyan-600 text-lg mt-2 dark:text-cyan-400">
+            <span className="block text-blue-600 mt-2 dark:text-blue-400">
               React • TypeScript • Vue • Next.js
             </span>
           </p>
@@ -192,19 +192,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
             <div className="flex items-center justify-center space-x-3 p-4 rounded-lg bg-white/50 backdrop-blur-sm border border-gray-200/50 dark:bg-gray-800/50 dark:border-gray-700/50">
               <Code className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
-              <span className="text-gray-700 font-medium dark:text-gray-200">
+              <span className="text-gray-700 dark:text-gray-200 text-base">
                 Clean Code
               </span>
             </div>
             <div className="flex items-center justify-center space-x-3 p-4 rounded-lg bg-white/50 backdrop-blur-sm border border-gray-200/50 dark:bg-gray-800/50 dark:border-gray-700/50">
               <Zap className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-              <span className="text-gray-700 font-medium dark:text-gray-200">
+              <span className="text-gray-700 dark:text-gray-200 text-base">
                 Lightning Fast
               </span>
             </div>
             <div className="flex items-center justify-center space-x-3 p-4 rounded-lg bg-white/50 backdrop-blur-sm border border-gray-200/50 dark:bg-gray-800/50 dark:border-gray-700/50">
               <Shield className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
-              <span className="text-gray-700 font-medium dark:text-gray-200">
+              <span className="text-gray-700 dark:text-gray-200 text-base">
                 Secure & Reliable
               </span>
             </div>
@@ -215,7 +215,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
             <Link to="/">
               <Button
                 size="lg"
-                className="text-lg px-8 py-6 bg-gradient-to-l from-emerald-500 via-neutral/10 to-blue-500 hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-xl hover:shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 text-white border-0 font-medium"
+                className="text-base px-8 py-6 bg-gradient-to-l from-blue-900 via-neutral/10 to-zinc-800 hover:from-blue-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-sm hover:shadow-xl shadow-blue-500/25 hover:shadow-blue-500/15 text-white border-0 font-medium"
                 onClick={() => {
                   scrollToSection("#projects");
                 }}
@@ -229,7 +229,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-lg px-8 py-6 border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50 transform hover:scale-105 transition-all duration-200 backdrop-blur-sm font-semibold dark:border-emerald-400 dark:text-emerald-400 dark:hover:bg-emerald-900/20"
+                className="text-base border-1 border-blue-500 text-blue-600 hover:bg-blue-50 transform hover:scale-105 transition-all duration-200 backdrop-blur-sm font-semibold dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-900/20"
               >
                 Download Resume
                 <DownloadCloud className="ml-3 size-4" />
@@ -245,7 +245,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
                 {[...Array(4)].map((_, i) => (
                   <div
                     key={i}
-                    className="w-6 h-6 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full border-2 border-white flex items-center justify-center shadow-lg shadow-cyan-500/25 dark:from-cyan-700 dark:to-blue-800 dark:border-gray-900 dark:shadow-cyan-700/25"
+                    className="w-6 h-6 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full border-1 border-white flex items-center justify-center shadow-lg shadow-blue-500/25 dark:from-blue-700 dark:to-blue-800 dark:border-gray-900 dark:shadow-blue-700/25"
                   >
                     <Users className="h-4 w-4 text-white" />
                   </div>
@@ -262,7 +262,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
               </span>
             </div>
             <div className="flex items-center">
-              <Globe className="w-5 h-5 text-emerald-400 mr-2 dark:text-emerald-300" />
+              <Globe className="w-5 h-5 text-blue-400 mr-2 dark:text-blue-300" />
               <span className="text-gray-700 font-medium dark:text-gray-200">
                 Global Reach
               </span>
@@ -296,17 +296,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
           </div> */}
 
           {/* Call to Action */}
-          <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-8 border border-cyan-200/50 dark:from-cyan-900/20 dark:to-blue-900/20 dark:border-cyan-700/50">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white">
+          <div className="bg-gradient-to-r from-blue-50 to-blue-50 rounded-2xl p-6 border border-blue-200/50 dark:from-blue-900/20 dark:to-blue-900/20 dark:border-blue-700/50">
+            <h3 className="text-3xl font-medium text-gray-900 mb-4 dark:text-white">
               Ready to Build Something Amazing?
             </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto dark:text-gray-300">
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto dark:text-gray-300 text-base">
               Let's link up and make some epic digital stuff happen.
             </p>
             <Link to="/">
               <Button
                 size="lg"
-                className="text-lg px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-semibold dark:from-emerald-600 dark:to-teal-700 dark:hover:from-emerald-700 dark:hover:to-teal-800"
+                className="text-base px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white dark:from-blue-600 dark:to-blue-700 dark:hover:from-blue-700 dark:hover:to-blue-800"
                 onClick={onContactClick}
               >
                 Let's Talk

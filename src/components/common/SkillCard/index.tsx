@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, CheckCircle, Star } from "lucide-react";
+import { CheckCircle, Star } from "lucide-react";
 
 interface Skill {
   id: string;

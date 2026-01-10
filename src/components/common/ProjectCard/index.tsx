@@ -22,7 +22,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <div
       key={project.id}
-      className="group relative bg-white/50 dark:bg-secondary dark:bg-gradient-to-br dark:from-gray-700/5 dark:via-gray-700/15 dark:to-gray-700/30 backdrop-blur-sm dark:bg-transparent rounded-2xl overflow-hidden border border-gray-200/50 hover:border-blue-200/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-2 dark:border-zinc-700/50 dark:hover:border-blue-700/50 dark:hover:shadow-blue-700/10"
+      className="group relative bg-white/50 dark:bg-secondary dark:bg-gradient-to-br dark:from-gray-700/5 dark:via-gray-700/15 dark:to-gray-700/30 backdrop-blur-sm dark:bg-transparent rounded-2xl overflow-hidden border border-gray-200/50 hover:border-blue-200/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-2 dark:border-zinc-700/50 dark:hover:border-blue-400/20 dark:hover:shadow-blue-400/10"
     >
       {/* Project Image */}
       <div className="relative h-60 sm:h-80 overflow-hidden">

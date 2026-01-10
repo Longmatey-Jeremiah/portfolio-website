@@ -40,7 +40,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({
   return (
     <div
       key={skill.id}
-      className="group relative bg-gradient-to-br from-black/1 via-black/2 to-black/5 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 hover:border-blue-200/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1 dark:from-gray-700/10 dark:via-gray-700/15 dark:to-gray-700/30 dark:border-zinc-700/50 dark:hover:border-blue-600/50 dark:hover:shadow-blue-900/20"
+      className="group relative bg-gradient-to-br from-black/1 via-black/2 to-black/5 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 hover:border-blue-200/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1 dark:from-gray-700/10 dark:via-gray-700/15 dark:to-gray-700/30 dark:border-zinc-700/50 dark:hover:border-blue-400/20 dark:hover:shadow-blue-400/10"
       //   onMouseEnter={() => setHoveredSkill(skill.id)}
       //   onMouseLeave={() => setHoveredSkill(null)}
     >

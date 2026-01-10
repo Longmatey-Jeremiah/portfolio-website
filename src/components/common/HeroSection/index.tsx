@@ -215,7 +215,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
             <Link to="/">
               <Button
                 size="lg"
-                className="text-base px-8 py-6 bg-gradient-to-l from-blue-900 via-neutral/10 to-zinc-800 hover:from-blue-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-sm hover:shadow-xl shadow-blue-500/25 hover:shadow-blue-500/15 text-white border-0 font-medium"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white shadow-lg shadow-cyan-500/25"
                 onClick={() => {
                   scrollToSection("#projects");
                 }}
@@ -296,8 +296,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
           </div> */}
 
           {/* Call to Action */}
-          <div className="bg-gradient-to-r from-blue-50 to-blue-50 rounded-2xl p-6 border border-blue-200/50 dark:from-blue-900/20 dark:to-blue-900/20 dark:border-blue-700/50">
-            <h3 className="text-3xl font-medium text-gray-900 mb-4 dark:text-white">
+          {/* <div className="bg-gradient-to-r from-blue-50 to-blue-50 rounded-2xl p-6 border border-blue-200/50 dark:from-blue-900/10 dark:to-blue-900/20 dark:border-blue-700/20"> */}
+          <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 max-w-2xl mx-auto dark:bg-zinc-700/20 dark:border-zinc-700/50">
+            <h3 className="text-2xl font-bold text-gray-900 mb-3 dark:text-white">
               Ready to Build Something Amazing?
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto dark:text-gray-300 text-base">

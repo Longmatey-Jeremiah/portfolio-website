@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Code, Globe, Zap, Star, Eye, ExternalLink } from "lucide-react";
+import { Code, Globe, Zap, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/common/ProjectCard";
 import type { Project } from "@/components/common/ProjectCard";
@@ -9,11 +9,11 @@ const projects: Project[] = [
     id: 1,
     title: "Papermap Inventory",
     description:
-      "A modern e-commerce platform built with React, Node.js, and Stripe integration. Features include user authentication, product management, shopping cart, and payment processing.",
+      " AI-powered inventory management that cuts costs by 85% and eliminates stockouts forever. Join multiple businesses already saving millions.",
     image: "/screenshots/papermap_inventory.png",
-    technologies: ["React", "TypeScript"],
+    technologies: ["React", "Tailwind CSS", "TypeScript"],
     liveUrl: "https://inventory.papermap.ai/",
-    githubUrl: "https://github.com/example",
+    // githubUrl: "https://github.com/example",
     featured: true,
     category: "web",
   },
@@ -21,66 +21,38 @@ const projects: Project[] = [
     id: 2,
     title: "Papermap AI",
     description:
-      "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+      "No-Code Data Platform, For Your Lean Team. Connect raw data in seconds. Get realtime insights, discover opportunities and automate operations with AI tailored to your business. ",
     image: "/screenshots/papermap.png",
 
-    technologies: ["Next.js", "TypeScript", "Socket.io", "PostgreSQL"],
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
     liveUrl: "https://papermap.ai",
-    githubUrl: "https://github.com/example",
+    // githubUrl: "https://github.com/example",
     featured: true,
     category: "web",
   },
   {
     id: 3,
-    title: "Weather Dashboard",
+    title: "Symliq Developers",
     description:
-      "A beautiful weather dashboard with interactive maps, detailed forecasts, and location-based weather alerts.",
-    image:
-      "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop",
-    technologies: ["React", "D3.js", "OpenWeather API", "Tailwind CSS"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/example",
-    featured: false,
+      "Website for Symliq Developers, a company that builds software solutions that drives growth. Transform your vision into reality with tailored software solutions that empower your business to thrive and exceed expectations.",
+    image: "/screenshots/symliq.png",
+    technologies: ["React", "Tailwind CSS"],
+    liveUrl: "https://symliq.com/",
+    // githubUrl: "https://github.com/example",
+    featured: true,
     category: "web",
   },
   {
     id: 4,
-    title: "Fitness Tracking Mobile App",
+    title: "Acacia Mobile App",
     description:
-      "A comprehensive fitness tracking app with workout plans, progress tracking, and social features for motivation.",
-    image:
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
-    technologies: ["React Native", "Firebase", "Redux", "Expo"],
+      "Acacia Health Insurance (Acacia) is a Private Commercial Health Insurance Company registered under the laws of Ghana which operates for the benefit of its members and this app presents Acacia with a platform tailor measured for this sole purpose.",
+    image: "/screenshots/acacia_mobile.webp",
+    technologies: ["React Native", "Redux", "Expo", "TypeScript"],
     liveUrl: "https://example.com",
-    githubUrl: "https://github.com/example",
+    // githubUrl: "https://github.com/example",
     featured: true,
     category: "mobile",
-  },
-  {
-    id: 5,
-    title: "Design System Library",
-    description:
-      "A comprehensive design system with reusable components, documentation, and design tokens for consistent UI development.",
-    image:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
-    technologies: ["Storybook", "TypeScript", "Tailwind CSS", "Figma"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/example",
-    featured: false,
-    category: "ui/ux",
-  },
-  {
-    id: 6,
-    title: "AI Chat Application",
-    description:
-      "An intelligent chat application powered by AI with natural language processing and contextual responses.",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
-    technologies: ["Next.js", "OpenAI API", "Socket.io", "Redis"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/example",
-    featured: false,
-    category: "fullstack",
   },
 ];
 
@@ -88,8 +60,8 @@ const categories = [
   { id: "all", name: "All Projects", icon: Code },
   { id: "web", name: "Web Apps", icon: Globe },
   { id: "mobile", name: "Mobile Apps", icon: Zap },
-  { id: "fullstack", name: "Full Stack", icon: Star },
-  { id: "ui/ux", name: "UI/UX Design", icon: Eye },
+  // { id: "fullstack", name: "Full Stack", icon: Star },
+  // { id: "ui/ux", name: "UI/UX Design", icon: Eye },
 ];
 
 interface ProjectsSectionProps {
@@ -132,7 +104,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 dark:text-white">
             My{" "}
-            <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-emerald-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
@@ -190,14 +162,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 Start a Project
                 <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
-              <Button
+              {/* <Button
                 size="lg"
                 variant="outline"
                 className="border-cyan-200 text-cyan-600 hover:bg-cyan-50 dark:border-cyan-700 dark:text-cyan-400 dark:hover:bg-cyan-900/20"
               >
                 View More Work
                 <Eye className="ml-2 h-4 w-4" />
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>

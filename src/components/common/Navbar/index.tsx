@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Home, User, Briefcase, Code, Mail } from "lucide-react";
-import { ThemeToggle } from "@/components/theme-toggler";
+// import { ThemeToggle } from "@/components/theme-toggler";
 
 interface NavItem {
   label: string;
@@ -69,7 +69,7 @@ export const Navbar: React.FC = () => {
                   <span>{item.label}</span>
                 </button>
               ))}
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
             </div>
           </div>
 

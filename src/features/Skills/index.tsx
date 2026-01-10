@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {
   Code,
-  Database,
+  // Database,
   Globe,
   Smartphone,
   Palette,
@@ -41,20 +41,20 @@ const skillCategories: SkillCategory[] = [
     description: "Modern web interfaces and user experiences",
     color: "from-blue-500 to-blue-600",
   },
-  {
-    id: "backend",
-    name: "Backend Development",
-    icon: Code,
-    description: "Server-side logic and APIs",
-    color: "from-blue-500 to-blue-600",
-  },
-  {
-    id: "database",
-    name: "Database & Storage",
-    icon: Database,
-    description: "Data management and optimization",
-    color: "from-blue-500 to-blue-600",
-  },
+  // {
+  //   id: "backend",
+  //   name: "Backend Development",
+  //   icon: Code,
+  //   description: "Server-side logic and APIs",
+  //   color: "from-blue-500 to-blue-600",
+  // },
+  // {
+  //   id: "database",
+  //   name: "Database & Storage",
+  //   icon: Database,
+  //   description: "Data management and optimization",
+  //   color: "from-blue-500 to-blue-600",
+  // },
   {
     id: "mobile",
     name: "Mobile Development",
@@ -118,7 +118,7 @@ const skills: Skill[] = [
     proficiency: 86,
     icon: "🎨",
     description: "Utility-first CSS framework for rapid UI development",
-    experience: "3+ years",
+    experience: "2+ years",
     featured: false,
   },
   {
@@ -133,27 +133,27 @@ const skills: Skill[] = [
   },
 
   // Backend Skills
-  {
-    id: "nodejs",
-    name: "Node.js",
-    category: "backend",
-    proficiency: 50,
-    icon: "🟢",
-    description:
-      "Server-side JavaScript with Express and performance optimization",
-    experience: "1+ years",
-    featured: false,
-  },
-  {
-    id: "python",
-    name: "Python",
-    category: "backend",
-    proficiency: 25,
-    icon: "🐍",
-    description: "Backend development with Django and FastAPI",
-    experience: "6 months",
-    featured: false,
-  },
+  // {
+  //   id: "nodejs",
+  //   name: "Node.js",
+  //   category: "backend",
+  //   proficiency: 50,
+  //   icon: "🟢",
+  //   description:
+  //     "Server-side JavaScript with Express and performance optimization",
+  //   experience: "1+ years",
+  //   featured: false,
+  // },
+  // {
+  //   id: "python",
+  //   name: "Python",
+  //   category: "backend",
+  //   proficiency: 25,
+  //   icon: "🐍",
+  //   description: "Backend development with Django and FastAPI",
+  //   experience: "6 months",
+  //   featured: false,
+  // },
 
   // Database Skills
   // {
@@ -207,7 +207,7 @@ const skills: Skill[] = [
     proficiency: 50,
     icon: "🎯",
     description: "Collaborative interface design and prototyping",
-    experience: "3+ years",
+    experience: "2+ years",
     featured: false,
   },
 
@@ -219,7 +219,7 @@ const skills: Skill[] = [
     proficiency: 70,
     icon: "📝",
     description: "Version control and collaborative development",
-    experience: "4+ years",
+    experience: "3+ years",
     featured: false,
   },
   {
@@ -282,7 +282,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 dark:text-white">
             Skills &{" "}
-            <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-emerald-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
               Technologies
             </span>
           </h2>

@@ -73,7 +73,9 @@ export const Home: React.FC = () => {
         {/* Gradient background */}
         <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-pink-50 via-nuetral to-blue-50 opacity-40 -z-10 dark:opacity-100 dark:from-black/5 dark:via-black/1 dark:to-black/25" />
         <div className="text-center relative z-10 max-w-7xl mx-auto p-6">
-          <h2 className="text-4xl font-bold mb-4">About Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 dark:text-white">
+            About Me
+          </h2>
           <p className="text-md leading-relaxed mb-8 max-w-4xl mx-auto text-muted-foreground">
             My journey in software development is fueled by a passion for
             crafting innovative solutions and a drive for continuous learning. I

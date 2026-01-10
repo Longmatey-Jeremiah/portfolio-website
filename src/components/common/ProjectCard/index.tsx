@@ -44,7 +44,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 </div>
                 <div className="flex-1 max-w-md mx-4">
                   <div className="bg-white dark:bg-zinc-700/80 rounded-lg px-4 py-2 text-sm text-gray-600 dark:text-primary border border-gray-300 dark:border-zinc-700/30 flex items-center">
-                    {project.liveUrl}
+                    {project.liveUrl && project.liveUrl.length > 60
+                      ? `${project.liveUrl.substring(0, 30)}...`
+                      : project.liveUrl}
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">

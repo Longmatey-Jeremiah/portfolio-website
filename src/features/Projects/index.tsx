@@ -49,7 +49,8 @@ const projects: Project[] = [
       "Acacia Health Insurance (Acacia) is a Private Commercial Health Insurance Company registered under the laws of Ghana which operates for the benefit of its members and this app presents Acacia with a platform tailor measured for this sole purpose.",
     image: "/screenshots/acacia_mobile.webp",
     technologies: ["React Native", "Redux", "Expo", "TypeScript"],
-    liveUrl: "https://example.com",
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=com.acacia.acaciahealthinsurance",
     // githubUrl: "https://github.com/example",
     featured: true,
     category: "mobile",

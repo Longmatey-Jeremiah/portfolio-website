@@ -350,7 +350,10 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({
               Let's discuss how my technical expertise can help bring your
               project to life.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              id="contact"
+            >
               <a href="/JeremiahLongmatey.pdf">
                 <Button
                   size="lg"

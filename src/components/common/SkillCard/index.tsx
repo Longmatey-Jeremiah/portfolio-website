@@ -8,9 +8,36 @@ interface Skill {
   proficiency: number; // 0-100
   icon: string;
   description: string;
-  experience: string;
+  startYear: number;
   featured: boolean;
 }
+
+const calculateExperienceYears = (startYear: number): string => {
+  try {
+    const currentYear = new Date().getFullYear();
+
+    // Validate startYear
+    if (
+      !startYear ||
+      isNaN(startYear) ||
+      startYear > currentYear ||
+      startYear < 1900
+    ) {
+      return "3+ years";
+    }
+
+    const years = currentYear - startYear;
+
+    // If calculation results in invalid value, default to 3
+    if (years < 0 || isNaN(years)) {
+      return "3+ years";
+    }
+
+    return `${years} years`;
+  } catch (error) {
+    return "3+ years";
+  }
+};
 
 interface SkillCategory {
   id: string;
@@ -62,7 +89,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({
             {skill.name}
           </h3>
           <p className="text-base text-gray-500 dark:text-gray-400">
-            {skill.experience}
+            {calculateExperienceYears(skill.startYear)}
           </p>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Code, Globe, Zap, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/common/ProjectCard";
+import { ScrollAnimation } from "@/components/common/ScrollAnimation";
 import type { Project } from "@/components/common/ProjectCard";
 
 const projects: Project[] = [
@@ -95,85 +96,99 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-100 to-blue-100 border border-cyan-200 mb-8 dark:from-cyan-900/50 dark:to-blue-900/50 dark:border-cyan-700">
-            <Code className="w-4 h-4 text-cyan-600 mr-2 dark:text-cyan-400" />
-            <span className="text-sm font-medium text-cyan-700 dark:text-cyan-300">
-              Featured Work
-            </span>
+        <ScrollAnimation direction="up" delay={0}>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-100 to-blue-100 border border-cyan-200 mb-8 dark:from-cyan-900/50 dark:to-blue-900/50 dark:border-cyan-700">
+              <Code className="w-4 h-4 text-cyan-600 mr-2 dark:text-cyan-400" />
+              <span className="text-sm font-medium text-cyan-700 dark:text-cyan-300">
+                Featured Work
+              </span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 dark:text-white">
+              My{" "}
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                Projects
+              </span>
+            </h2>
+
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed dark:text-gray-400">
+              Explore a collection of my latest work, showcasing innovative
+              solutions and cutting-edge technologies.
+            </p>
           </div>
-
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 dark:text-white">
-            My{" "}
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
-              Projects
-            </span>
-          </h2>
-
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed dark:text-gray-400">
-            Explore a collection of my latest work, showcasing innovative
-            solutions and cutting-edge technologies.
-          </p>
-        </div>
+        </ScrollAnimation>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => {
-            const Icon = category.icon;
-            return (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-200 font-medium ${
-                  selectedCategory === category.id
-                    ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25"
-                    : "bg-white/50 backdrop-blur-sm border border-gray-200/50 text-gray-700 hover:bg-white/80 hover:border-cyan-200 dark:bg-zinc-800/50 dark:border-zinc-700/50 dark:text-gray-300 dark:hover:bg-zinc-700/50 dark:hover:border-cyan-600"
-                }`}
-              >
-                <Icon className="w-4 h-4" />
-                {category.name}
-              </button>
-            );
-          })}
-        </div>
+        <ScrollAnimation direction="up" delay={0.15}>
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {categories.map((category) => {
+              const Icon = category.icon;
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-200 font-medium ${
+                    selectedCategory === category.id
+                      ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25"
+                      : "bg-white/50 backdrop-blur-sm border border-gray-200/50 text-gray-700 hover:bg-white/80 hover:border-cyan-200 dark:bg-zinc-800/50 dark:border-zinc-700/50 dark:text-gray-300 dark:hover:bg-zinc-700/50 dark:hover:border-cyan-600"
+                  }`}
+                >
+                  <Icon className="w-4 h-4" />
+                  {category.name}
+                </button>
+              );
+            })}
+          </div>
+        </ScrollAnimation>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
+        <ScrollAnimation direction="up" delay={0.25}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {filteredProjects.map((project, index) => (
+              <ScrollAnimation
+                key={project.id}
+                direction="up"
+                delay={0.3 + index * 0.05}
+              >
+                <ProjectCard project={project} />
+              </ScrollAnimation>
+            ))}
+          </div>
+        </ScrollAnimation>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 max-w-2xl mx-auto dark:bg-zinc-700/20 dark:border-zinc-700/50">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white">
-              Have a project in mind?
-            </h3>
-            <p className="text-gray-600 mb-6 dark:text-gray-400">
-              Let's link up and bring your wild ideas to life with some
-              next-level tech and 🔥 design.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white shadow-lg shadow-cyan-500/25"
-                onClick={onContactClick}
-              >
-                Start a Project
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </Button>
-              {/* <Button
-                size="lg"
-                variant="outline"
-                className="border-cyan-200 text-cyan-600 hover:bg-cyan-50 dark:border-cyan-700 dark:text-cyan-400 dark:hover:bg-cyan-900/20"
-              >
-                View More Work
-                <Eye className="ml-2 h-4 w-4" />
-              </Button> */}
+        <ScrollAnimation direction="up" delay={0.6}>
+          <div className="text-center mt-16">
+            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 max-w-2xl mx-auto dark:bg-zinc-700/20 dark:border-zinc-700/50">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white">
+                Have a project in mind?
+              </h3>
+              <p className="text-gray-600 mb-6 dark:text-gray-400">
+                Let's link up and bring your wild ideas to life with some
+                next-level tech and 🔥 design.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white shadow-lg shadow-cyan-500/25"
+                  onClick={onContactClick}
+                >
+                  Start a Project
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Button>
+                {/* <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-cyan-200 text-cyan-600 hover:bg-cyan-50 dark:border-cyan-700 dark:text-cyan-400 dark:hover:bg-cyan-900/20"
+                >
+                  View More Work
+                  <Eye className="ml-2 h-4 w-4" />
+                </Button> */}
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
     </section>
   );

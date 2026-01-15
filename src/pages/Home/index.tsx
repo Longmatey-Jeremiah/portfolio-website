@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { ProjectsSection, SkillsSection } from "@/features";
-import { ContactModal, HeroSection, FeatureCard } from "@/components/common";
+import {
+  ContactModal,
+  HeroSection,
+  FeatureCard,
+  ScrollAnimation,
+} from "@/components/common";
 import {
   ArrowRight,
   Brain,
@@ -73,26 +78,38 @@ export const Home: React.FC = () => {
         {/* Gradient background */}
         <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-pink-50 via-nuetral to-blue-50 opacity-40 -z-10 dark:opacity-100 dark:from-black/5 dark:via-black/1 dark:to-black/25" />
         <div className="text-center relative z-10 max-w-7xl mx-auto p-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 dark:text-white">
-            About Me
-          </h2>
-          <p className="text-md leading-relaxed mb-8 max-w-4xl mx-auto text-muted-foreground">
-            My journey in software development is fueled by a passion for
-            crafting innovative solutions and a drive for continuous learning. I
-            focus on building robust, scalable, and user-centric applications
-            that truly make an impact.
-          </p>
+          <ScrollAnimation direction="up" delay={0}>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 dark:text-white">
+              About Me
+            </h2>
+          </ScrollAnimation>
+          <ScrollAnimation direction="up" delay={0.15}>
+            <p className="text-md leading-relaxed mb-8 max-w-4xl mx-auto text-muted-foreground">
+              My journey in software development is fueled by a passion for
+              crafting innovative solutions and a drive for continuous learning.
+              I focus on building robust, scalable, and user-centric
+              applications that truly make an impact.
+            </p>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
-              <FeatureCard key={index} {...feature} />
+              <ScrollAnimation
+                key={index}
+                direction="up"
+                delay={0.25 + index * 0.05}
+              >
+                <FeatureCard {...feature} />
+              </ScrollAnimation>
             ))}
           </div>
 
-          <p className="text-lg leading-relaxed mt-8 mb-4">
-            Beyond technical skills, I bring a unique blend of leadership,
-            creativity, and strategic thinking to every project.
-          </p>
+          <ScrollAnimation direction="up" delay={0.6}>
+            <p className="text-lg leading-relaxed mt-8 mb-4">
+              Beyond technical skills, I bring a unique blend of leadership,
+              creativity, and strategic thinking to every project.
+            </p>
+          </ScrollAnimation>
         </div>
       </section>
 

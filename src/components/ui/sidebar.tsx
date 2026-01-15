@@ -38,7 +38,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         onClick={onClose}
         aria-hidden="true"
       />
-      
+
       {/* Sidebar */}
       <aside
         className={cn(
@@ -57,9 +57,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <X className="w-6 h-6" />
             </button>
           </div>
-          <div className="flex-1 overflow-y-auto">
-            {children}
-          </div>
+          <div className="flex-1 overflow-y-auto">{children}</div>
         </div>
       </aside>
     </>

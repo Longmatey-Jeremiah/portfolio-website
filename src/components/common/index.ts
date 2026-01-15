@@ -4,3 +4,4 @@ export * from "./Navbar";
 export * from "./ProjectCard";
 export * from "./SkillCard";
 export * from "./FeatureCard";
+export * from "./ScrollAnimation";

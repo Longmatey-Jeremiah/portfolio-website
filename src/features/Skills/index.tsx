@@ -21,7 +21,7 @@ interface Skill {
   proficiency: number; // 0-100
   icon: string;
   description: string;
-  experience: string;
+  startYear: number;
   featured: boolean;
 }
 
@@ -88,7 +88,7 @@ const skills: Skill[] = [
     icon: "⚛️",
     description:
       "Modern React with hooks, context, and performance optimization",
-    experience: "2+ years",
+    startYear: 2023,
     featured: false,
   },
   {
@@ -98,7 +98,7 @@ const skills: Skill[] = [
     proficiency: 75,
     icon: "📘",
     description: "Type-safe JavaScript development with advanced patterns",
-    experience: "2+ years",
+    startYear: 2023,
     featured: false,
   },
   {
@@ -108,7 +108,7 @@ const skills: Skill[] = [
     proficiency: 70,
     icon: "▲",
     description: "Full-stack React framework with SSR and SSG",
-    experience: "2+ years",
+    startYear: 2023,
     featured: false,
   },
   {
@@ -118,7 +118,7 @@ const skills: Skill[] = [
     proficiency: 86,
     icon: "🎨",
     description: "Utility-first CSS framework for rapid UI development",
-    experience: "2+ years",
+    startYear: 2023,
     featured: false,
   },
   {
@@ -128,7 +128,7 @@ const skills: Skill[] = [
     proficiency: 75,
     icon: "💚",
     description: "Progressive JavaScript framework",
-    experience: "2+ years",
+    startYear: 2024,
     featured: false,
   },
 
@@ -185,7 +185,7 @@ const skills: Skill[] = [
     proficiency: 70,
     icon: "📱",
     description: "Cross-platform mobile app development",
-    experience: "2+ years",
+    startYear: 2024,
     featured: false,
   },
   {
@@ -195,7 +195,7 @@ const skills: Skill[] = [
     proficiency: 65,
     icon: "⚡",
     description: "React Native development platform",
-    experience: "2+ years",
+    startYear: 2024,
     featured: false,
   },
 
@@ -207,7 +207,7 @@ const skills: Skill[] = [
     proficiency: 50,
     icon: "🎯",
     description: "Collaborative interface design and prototyping",
-    experience: "2+ years",
+    startYear: 2024,
     featured: false,
   },
 
@@ -219,7 +219,7 @@ const skills: Skill[] = [
     proficiency: 70,
     icon: "📝",
     description: "Version control and collaborative development",
-    experience: "3+ years",
+    startYear: 2021,
     featured: false,
   },
   {
@@ -229,7 +229,7 @@ const skills: Skill[] = [
     proficiency: 45,
     icon: "🐳",
     description: "Containerization and deployment",
-    experience: "2+ years",
+    startYear: 2023,
     featured: false,
   },
 ];

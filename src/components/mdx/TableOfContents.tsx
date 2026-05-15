@@ -43,10 +43,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ items }) => {
       </p>
       <ul className="space-y-2 border-l border-border">
         {items.map((item) => (
-          <li
-            key={item.id}
-            className={cn(item.level === 3 ? "pl-6" : "pl-4")}
-          >
+          <li key={item.id} className={cn(item.level === 3 ? "pl-6" : "pl-4")}>
             <a
               href={`#${item.id}`}
               className={cn(

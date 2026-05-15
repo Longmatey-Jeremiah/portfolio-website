@@ -10,7 +10,7 @@ import { ArrowLeft, ArrowUpRight, Link as LinkIcon } from "lucide-react";
 import { MDXProvider } from "@mdx-js/react";
 import { Reveal } from "@/components/motion/Reveal";
 import { Eyebrow } from "@/components/typography";
-import { mdxComponents } from "@/components/mdx/MdxComponents";
+import { mdxComponents } from "@/components/mdx/mdxComponents";
 import { ReadingProgress } from "@/components/mdx/ReadingProgress";
 import { TableOfContents } from "@/components/mdx/TableOfContents";
 import { extractToc, type TocItem } from "@/components/mdx/toc";

@@ -11,8 +11,8 @@ export const NotFound: React.FC = () => {
         This page is <em className="italic text-emphasis">missing</em>.
       </h1>
       <p className="mt-4 max-w-md text-base text-muted-foreground">
-        The page you requested doesn't exist — or has moved. The home page is
-        a good place to land.
+        The page you requested doesn't exist — or has moved. The home page is a
+        good place to land.
       </p>
       <Link to="/" className="btn-pill-outline mt-8">
         <ArrowLeft className="h-3.5 w-3.5" />

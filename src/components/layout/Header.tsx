@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight, Sun, Moon, Monitor } from "lucide-react";
+import { SiteBrand } from "@/components/layout/SiteBrand";
+import { primaryNav } from "@/lib/site";
+import { useTheme } from "@/providers/theme-context";
+import { cn } from "@/lib/utils";
 
 type Theme = "light" | "dark" | "system";
 
@@ -16,10 +20,6 @@ const themeMeta: Record<Theme, { icon: typeof Sun; label: string }> = {
   dark: { icon: Moon, label: "Dark" },
   system: { icon: Monitor, label: "System" },
 };
-import { SiteBrand } from "@/components/layout/SiteBrand";
-import { primaryNav } from "@/lib/site";
-import { useTheme } from "@/providers/theme-provider";
-import { cn } from "@/lib/utils";
 
 export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -102,7 +102,11 @@ export const Header: React.FC = () => {
               aria-label="Toggle menu"
               aria-expanded={isOpen}
             >
-              {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+              {isOpen ? (
+                <X className="h-4 w-4" />
+              ) : (
+                <Menu className="h-4 w-4" />
+              )}
             </button>
           </div>
         </div>

@@ -11,7 +11,7 @@ export const site = {
   timezone: "GMT+0",
   email: "longmateyjeremiah1@gmail.com",
   phone: "+233 54 342 7199",
-  resumePath: "/JeremiahLongmatey.pdf",
+  resumePath: "/Jeremiah_Longmatey_Resume.pdf",
   social: {
     github: "https://github.com/Longmatey-Jeremiah",
     linkedin: "https://www.linkedin.com/in/jeremiah-longmatey/",

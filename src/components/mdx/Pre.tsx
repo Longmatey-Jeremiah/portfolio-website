@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { CopyButton } from "./CopyButton";
 import { extractText } from "./extract-text";
 
-const Pre: React.FC<React.HTMLAttributes<HTMLPreElement>> = (props) => {
+export const Pre: React.FC<React.HTMLAttributes<HTMLPreElement>> = (props) => {
   const ref = useRef<HTMLPreElement | null>(null);
   const text = extractText(props.children);
   return (
@@ -11,8 +11,4 @@ const Pre: React.FC<React.HTMLAttributes<HTMLPreElement>> = (props) => {
       <CopyButton text={text} />
     </div>
   );
-};
-
-export const mdxComponents = {
-  pre: Pre,
 };

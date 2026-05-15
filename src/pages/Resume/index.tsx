@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, Download } from "lucide-react";
+import { Download } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { Eyebrow } from "@/components/typography";
 import { site } from "@/lib/site";
@@ -13,91 +13,141 @@ interface Role {
   highlights: string[];
 }
 
+const summary = [
+  "Frontend Engineer with 4+ years designing and scaling complex, data-intensive web applications using React, TypeScript, and modern web technologies. Proven track record of leading frontend architecture, building extensible systems, and optimizing performance in enterprise and regulated environments.",
+  "Strong in maintainable design systems, frontend performance, and cross-functional collaboration with backend and product teams. Expanding into fullstack development with hands-on experience in API design, system architecture, and scalable application development.",
+];
+
 const experience: Role[] = [
   {
-    company: "Papermap",
+    company: "Papermap.AI",
     position: "Frontend Engineer",
-    period: "2024 — Present",
-    location: "Remote",
+    period: "Jul 2024 — Present",
+    location: "Remote · New York, USA",
     summary:
-      "Lead frontend on operator-grade inventory and AI data tooling — architecture, performance, and design system.",
+      "Lead frontend on an enterprise inventory and risk management platform — scalable, modular systems for governance and audit workflows.",
     highlights: [
-      "Architected the inventory frontend around three primitives — SKU, location, supplier — collapsing the codebase footprint by ~40% versus the prototype.",
-      "Defined and met a sub-200ms p75 navigation budget across the dense table-heavy product.",
-      "Built the streaming AI chat surface with token-level rendering and inline citations grounded to source queries.",
+      "Led frontend architecture for an enterprise inventory and risk management platform, building modular systems that support complex governance and audit workflows.",
+      "Redesigned data-intensive interfaces, reducing user navigation time by ~25% and improving audit traceability across compliance flows.",
+      "Translated risk and compliance metrics into intuitive, data-driven UI components and optimized form flows — measurable usability gains and lower user friction.",
+      "Designed and implemented a scalable plugin-based architecture enabling extensibility across multiple client applications, cutting feature duplication and accelerating feature delivery by ~40%.",
+      "Established frontend standards through code reviews, documentation, and mentorship — measurable lift in code quality and team consistency.",
+      "Accelerated development cycles by ~30% by integrating AI-assisted tooling for repetitive implementation work.",
     ],
   },
-  {
-    company: "Acacia Health",
-    position: "Mobile Engineer",
-    period: "2023 — 2024",
-    location: "Remote",
-    summary:
-      "Built an offline-first cross-platform health insurance app for emerging-market users on intermittent connectivity.",
-    highlights: [
-      "Designed a replay-queue mutation system that survived flaky networks without losing user intent.",
-      "Held crash-free sessions over 99.6% across a wide device matrix.",
-      "Shipped OTA updates via Expo to reach users faster than store-update cycles.",
-    ],
-  },
+  // {
+  //   company: "Jackson Educational Complex",
+  //   position: "Frontend Engineer (Contract)",
+  //   period: "Aug 2023 — Present",
+  //   location: "Remote · Ghana",
+  //   summary:
+  //     "Lead a small team building a scalable student portal — design system, CI/CD, and backend integration.",
+  //   highlights: [
+  //     "Led a team of 3 engineers to design and deliver a scalable student portal, improving access to academic and administrative data.",
+  //     "Designed and maintained a reusable design system on React + Chakra UI for consistency and accessibility across the platform.",
+  //     "Implemented CI/CD pipelines with GitHub Actions and Docker — reduced deployment friction and improved release reliability.",
+  //     "Collaborated on backend data structures and performance optimizations to support scalable data retrieval.",
+  //     "Improved development efficiency by ~20% through structured code reviews and cross-functional collaboration.",
+  //   ],
+  // },
   {
     company: "Symliq Developers",
-    position: "Frontend Engineer",
-    period: "2022 — 2023",
-    location: "Accra, Ghana",
+    position: "Frontend Engineer (Part-Time)",
+    period: "Apr 2023 — Present",
+    location: "Remote · Accra, Ghana",
     summary:
-      "Studio engineering — performance-first marketing surfaces, restrained motion, tight content pipelines.",
+      "Build and optimize secure, data-driven products — insurance, financial, and Shopify storefronts.",
     highlights: [
-      "Hit sub-1s LCP across studio builds on 4G.",
-      "Pushed sub-40kb JS budgets on content-only routes.",
-      "Built reusable section primitives that cut new-page time from days to hours.",
+      "Built and optimized a secure, data-driven insurance platform on React + TypeScript, handling sensitive risk and audit data.",
+      "Partnered with cross-functional teams to deliver a financial application with complex auditing and reporting features.",
+      "Developed modular component libraries with Storybook — improved UI consistency and shipping speed.",
+      "Optimized Shopify storefront performance, reducing load times by ~20%.",
+      "Integrated third-party services and plugins while preserving performance budgets.",
+    ],
+  },
+  {
+    company: "Carefusion Ltd",
+    position: "Frontend Engineer Intern",
+    period: "Jul 2024 — Jan 2025",
+    location: "Remote · Accra, Ghana",
+    summary:
+      "Built internal dashboards for audit logs and governance metrics in a regulated environment.",
+    highlights: [
+      "Developed internal dashboards visualizing audit logs and governance metrics — measurable lift in operational visibility.",
+      "Built reusable UI components aligned with accessibility and design standards.",
+      "Contributed to agile delivery cycles, shipping production-ready features in a collaborative engineering environment.",
+    ],
+  },
+  {
+    company: "Freelance / Contract",
+    position: "Software Developer",
+    period: "Mar 2020 — Jan 2022",
+    location: "Remote · Accra, Ghana",
+    summary:
+      "Vendor, healthcare, and cross-platform mobile work — translating complex workflows into intuitive experiences.",
+    highlights: [
+      "Designed and built vendor and healthcare platforms, translating complex workflows into intuitive user experiences.",
+      "Delivered a cross-platform mobile application using React Native and Django, supporting secure transaction flows.",
+      "Improved client conversion rates by optimizing user flows and application performance.",
     ],
   },
 ];
 
 const skills: { group: string; items: string[] }[] = [
   {
-    group: "Languages",
-    items: ["TypeScript", "JavaScript", "HTML", "CSS", "SQL"],
-  },
-  {
-    group: "Frontend",
+    group: "Frontend Core",
     items: [
       "React",
       "Next.js",
-      "React Native",
-      "Tailwind CSS",
-      "Framer Motion",
-      "shadcn/ui",
+      "TypeScript",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "API Integration",
+      "Component-driven architecture",
+      "Context API",
+      "Redux Toolkit",
+      "Zustand",
+      "React Testing Library",
+      "Performance optimization",
     ],
   },
   {
-    group: "State & Data",
-    items: ["TanStack Query", "Zustand", "Redux Toolkit", "React Hook Form"],
+    group: "Architecture & UI",
+    items: [
+      "Design Systems",
+      "Storybook",
+      "Accessibility",
+      "Tailwind CSS",
+      "Chakra UI",
+      "shadcn/ui",
+      "SASS / SCSS",
+    ],
   },
   {
-    group: "Backend / Infra",
-    items: ["Node.js", "REST/RPC APIs", "Postgres", "Edge Functions"],
+    group: "DevOps & Tooling",
+    items: ["Docker", "CI/CD", "GitHub Actions", "Git", "Webpack", "Bash"],
   },
   {
-    group: "Tooling",
-    items: ["Vite", "ESLint", "TypeScript ergonomics", "Playwright", "Git"],
+    group: "Backend & Mobile",
+    items: ["Node.js", "React Native", "Flutter", "MySQL", "PHP", "Laravel"],
   },
 ];
 
 const strengths = [
-  "Frontend systems & component architecture",
-  "State boundaries in data-intensive products",
+  "Frontend architecture for data-intensive products",
+  "Plugin-based extensibility & modular system design",
   "Performance budgets & measurement",
-  "Design systems & motion language",
+  "Design systems & accessible component libraries",
   "Operator-grade interfaces (tables, dense UIs)",
   "AI-assisted product engineering",
 ];
 
-const certifications = [
-  "Meta Front-End Developer (Coursera)",
-  "Advanced React Performance (egghead)",
-];
+const education = {
+  degree: "Bachelor of Science in Computer Science",
+  school: "Kwame Nkrumah University of Science and Technology (KNUST)",
+  location: "Kumasi, Ghana",
+};
 
 export const Resume: React.FC = () => {
   return (
@@ -133,6 +183,26 @@ export const Resume: React.FC = () => {
             </div>
           </div>
         </Reveal>
+      </section>
+
+      <section className="section-pad-sm">
+        <div className="container-page">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
+            <div className="md:col-span-4">
+              <Eyebrow className="mb-6">Summary</Eyebrow>
+            </div>
+            <div className="md:col-span-8 space-y-5">
+              {summary.map((p) => (
+                <p
+                  key={p}
+                  className="text-base leading-relaxed text-foreground md:text-lg"
+                >
+                  {p}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="section-pad-sm">
@@ -237,28 +307,25 @@ export const Resume: React.FC = () => {
         </div>
       </section>
 
-      {/* <section className="section-pad-sm bg-secondary">
+      <section className="section-pad-sm bg-secondary">
         <div className="container-page">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
             <div className="md:col-span-4">
-              <Eyebrow className="mb-6">Certifications</Eyebrow>
+              <Eyebrow className="mb-6">Education</Eyebrow>
             </div>
             <div className="md:col-span-8">
-              <ul className="divide-y divide-border border-y border-border">
-                {certifications.map((c) => (
-                  <li
-                    key={c}
-                    className="flex items-center justify-between py-4 text-sm text-foreground"
-                  >
-                    <span>{c}</span>
-                    <ArrowUpRight className="h-4 w-4 text-muted-foreground" />
-                  </li>
-                ))}
-              </ul>
+              <div className="rounded-2xl border border-border bg-background p-7 md:p-9">
+                <h3 className="font-serif text-[1.5rem] leading-tight tracking-[-0.015em] text-foreground md:text-[1.875rem]">
+                  {education.degree}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {education.school} &middot; {education.location}
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
     </>
   );
 };

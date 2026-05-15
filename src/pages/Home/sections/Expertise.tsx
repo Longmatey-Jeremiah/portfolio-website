@@ -24,57 +24,49 @@ const disciplines: Discipline[] = [
   {
     icon: Layers,
     title: "Frontend systems",
-    body:
-      "Component architecture, design tokens, and shared primitives that make a product feel like a single instrument.",
+    body: "Component architecture, design tokens, and shared primitives that make a product feel like a single instrument.",
     surface: ["React", "TypeScript", "Tailwind", "shadcn/ui"],
   },
   {
     icon: Workflow,
     title: "Architecture",
-    body:
-      "State boundaries, data flow, and module decomposition for codebases that need to outlive their first quarter.",
+    body: "State boundaries, data flow, and module decomposition for codebases that need to outlive their first quarter.",
     surface: ["State design", "Domain modeling", "Module boundaries"],
   },
   {
     icon: Activity,
     title: "Performance engineering",
-    body:
-      "Latency budgets, hydration strategy, profiling, and measurable improvements — not vibes.",
+    body: "Latency budgets, hydration strategy, profiling, and measurable improvements — not vibes.",
     surface: ["Web Vitals", "Profiling", "Bundle analysis"],
   },
   {
     icon: Cpu,
     title: "Fullstack foundations",
-    body:
-      "Comfortable with the layers under the UI — APIs, auth, edge runtimes, and the contracts between them.",
+    body: "Comfortable with the layers under the UI — APIs, auth, edge runtimes, and the contracts between them.",
     surface: ["Node.js", "REST/RPC", "Edge functions"],
   },
   {
     icon: Palette,
     title: "Design systems",
-    body:
-      "Tokens, primitives, and motion language that scale across surfaces while staying disciplined.",
+    body: "Tokens, primitives, and motion language that scale across surfaces while staying disciplined.",
     surface: ["Tokens", "Primitives", "Motion language"],
   },
   {
     icon: GitBranch,
     title: "Developer experience",
-    body:
-      "Tooling, conventions, and review patterns that make the team faster six months in, not just on day one.",
+    body: "Tooling, conventions, and review patterns that make the team faster six months in, not just on day one.",
     surface: ["Tooling", "Type ergonomics", "Review patterns"],
   },
   {
     icon: Database,
     title: "Data visualization",
-    body:
-      "Tables, charts, and dense interfaces tuned for operators who live in the product.",
+    body: "Tables, charts, and dense interfaces tuned for operators who live in the product.",
     surface: ["Tables", "Charts", "Dense UIs"],
   },
   {
     icon: Sparkles,
     title: "AI-assisted engineering",
-    body:
-      "Practical application of LLM tooling for shipping — codegen, search, content, with grounded constraints.",
+    body: "Practical application of LLM tooling for shipping — codegen, search, content, with grounded constraints.",
     surface: ["LLM workflows", "Streaming UIs", "Citations"],
   },
 ];

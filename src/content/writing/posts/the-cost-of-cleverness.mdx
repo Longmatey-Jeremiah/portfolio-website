@@ -1,0 +1,44 @@
+---
+title: "The cost of cleverness"
+description: "An essay on why senior engineers write boring code — and what the people who don't are actually optimizing for."
+excerpt: "Cleverness has a half-life. The code that survives — the code that scales across teams and years — is almost always the boring code."
+date: "2026-01-18"
+readingTime: 1
+tags: ["engineering practice", "leadership"]
+category: "Engineering Practice"
+---
+
+Cleverness has a half-life. The code that survives — the code that scales across teams and years — is almost always the _boring_ code.
+
+## What we mean by clever
+
+Clever code is the variant that, at the moment of writing, makes the author feel sharp. It compresses three steps into one. It uses a feature of the language that ninety percent of readers will need to look up.
+
+```ts
+// Clever
+const grouped = items.reduce<Record<string, Item[]>>(
+  (acc, x) => ((acc[x.kind] ??= []).push(x), acc),
+  {},
+);
+
+// Boring
+const grouped: Record<string, Item[]> = {};
+for (const item of items) {
+  grouped[item.kind] ??= [];
+  grouped[item.kind].push(item);
+}
+```
+
+The clever version saves you four lines. The boring version saves the next reader thirty seconds and zero context switches.
+
+## What clever code optimizes for
+
+The hidden function being maximized is almost never _team velocity_. It's something closer to _self-image_. Clever code says, _I am a sophisticated engineer._
+
+Boring code says, _I am here to ship the product._
+
+## The boring senior engineer
+
+The senior engineers I most admire have, almost without exception, the same surface trait: their code is shockingly direct. Variables are named for what they are. Functions do one thing. Comments — when they exist — explain _why_, not _what_.
+
+That isn't a lack of skill. It's the most expensive kind of skill: the kind that knows what the next person needs.

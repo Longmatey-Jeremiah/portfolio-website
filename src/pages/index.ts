@@ -1,1 +1,9 @@
-export * from "./Home";
+export { Home } from "./Home";
+export { About } from "./About";
+export { Projects } from "./Projects";
+export { ProjectDetail } from "./Projects/Detail";
+export { Writing } from "./Writing";
+export { WritingDetail } from "./Writing/Detail";
+export { Contact } from "./Contact";
+export { Resume } from "./Resume";
+export { NotFound } from "./NotFound";

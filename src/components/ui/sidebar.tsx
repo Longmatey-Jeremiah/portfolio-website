@@ -44,7 +44,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         className={cn(
           "fixed top-0 bottom-0 h-screen w-70 bg-gradient-to-br from-black/80 via-black/80 to-black/5 backdrop-blur-2xl dark:from-gray-800/80 dark:via-gray-800/45 dark:to-gray-800/50 z-50 md:hidden transition-transform duration-300 ease-in-out p-6",
           side === "left" ? "left-0" : "right-0",
-          className
+          className,
         )}
       >
         <div className="flex flex-col h-full">

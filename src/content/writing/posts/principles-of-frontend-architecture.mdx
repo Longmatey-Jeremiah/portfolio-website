@@ -1,0 +1,60 @@
+---
+title: "Principles of frontend architecture"
+description: "What I've learned about scaling frontend systems from prototype to production — and the small set of decisions that compound."
+excerpt: "Most frontend complexity is self-imposed. A small set of architectural decisions compounds into either clarity or chaos. Here's what I've found matters."
+date: "2026-04-12"
+readingTime: 2
+tags: ["architecture", "react", "systems"]
+category: "Architecture"
+---
+
+Most frontend complexity is self-imposed. A small set of architectural decisions compounds into either clarity or chaos.
+
+After four years of building and rebuilding interfaces — from small marketing sites to data-intensive operator tools — I've come to trust a handful of principles. They're not novel. But they're the ones I keep returning to.
+
+## Server state is not UI state
+
+The single highest-leverage decision in any non-trivial frontend is to stop treating server-derived data and ephemeral UI state as the same thing.
+
+Server state — what came back from the API — has different lifecycle, freshness, and identity rules than the open-state of a drawer.
+
+```ts
+// Server state — cached, refetched, owned by the server
+const { data: orders } = useQuery({
+  queryKey: ["orders", filters],
+  queryFn: () => api.orders.list(filters),
+});
+
+// UI state — ephemeral, owned by the component
+const [isDrawerOpen, setDrawerOpen] = useState(false);
+```
+
+When you collapse these into one store, you get stale data, duplicated cache invalidation logic, and refresh bugs that are hard to reason about.
+
+## Compose primitives, not pages
+
+The best codebases I've worked in have a handful of well-shaped primitives — a `Cell`, a `Field`, a `Stack` — and pages compose them.
+
+The worst have page-shaped components: `OrdersListPage`, `OrdersListPageHeader`, `OrdersListPageHeaderActions`. Three months in, half of them are unused.
+
+> Build the smallest piece. Compose upward. Resist the urge to name a "page."
+
+## Treat tradeoffs like first-class artifacts
+
+Every architectural decision has a counterfactual. Choosing virtualized tables means choosing against simpler pagination. Choosing optimistic updates means choosing against simple consistency.
+
+Write the tradeoff down. Future-you will thank present-you.
+
+## Performance is a feature, not a finish
+
+Latency budgets at design time prevent performance from becoming a six-month rescue project. A few practical anchors I use:
+
+- First content under 1.2s on 4G
+- Route navigations under 200ms (p75)
+- No interaction over 50ms on the main thread
+
+These aren't perfectionism — they're permission to push back when a feature would blow them.
+
+## Closing
+
+If I had to compress this further: model your domain, separate your state, compose your primitives, write down your tradeoffs, and treat performance as a constraint you design with, not a problem you debug into.

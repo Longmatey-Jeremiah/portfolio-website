@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, Download } from "lucide-react";
+import { Download } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { Eyebrow } from "@/components/typography";
 import { site } from "@/lib/site";
@@ -94,10 +94,10 @@ const strengths = [
   "AI-assisted product engineering",
 ];
 
-const certifications = [
-  "Meta Front-End Developer (Coursera)",
-  "Advanced React Performance (egghead)",
-];
+// const certifications = [
+//   "Meta Front-End Developer (Coursera)",
+//   "Advanced React Performance (egghead)",
+// ];
 
 export const Resume: React.FC = () => {
   return (

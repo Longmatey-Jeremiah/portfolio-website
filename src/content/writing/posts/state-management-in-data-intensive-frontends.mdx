@@ -1,0 +1,43 @@
+---
+title: "State management in data-intensive frontends"
+description: "How I think about state in apps where the data dwarfs the UI — and why the answer is rarely 'one library to rule them all.'"
+excerpt: "In data-heavy interfaces, the question is not which state library to pick — it's how to model the boundaries between four different kinds of state."
+date: "2026-03-02"
+readingTime: 1
+tags: ["state", "react", "performance"]
+category: "Systems"
+---
+
+In data-heavy interfaces, the question is rarely *which* state library — it's *how to model the boundaries* between the four different kinds of state every non-trivial app has.
+
+## The four kinds
+
+1. **Server state** — derived from a remote source, cached, refetched, owned by the server.
+2. **URL state** — filters, pagination, selected entity. The right place for anything you'd want to share.
+3. **Form state** — in-flight, validated, dirty.
+4. **Ephemeral UI state** — open drawers, hovered rows, focus.
+
+Each has a different lifetime and ownership story. Conflating them is the root cause of most "the data won't refresh" and "the back button breaks the page" bugs.
+
+## A practical mapping
+
+```ts
+// 1. Server state → TanStack Query
+const orders = useQuery({ queryKey: ["orders", { status }], queryFn: ... });
+
+// 2. URL state → search params
+const [params, setParams] = useSearchParams();
+const status = params.get("status") ?? "open";
+
+// 3. Form state → react-hook-form
+const form = useForm({ defaultValues });
+
+// 4. Ephemeral UI state → useState (or Zustand for cross-component)
+const [isDrawerOpen, setDrawerOpen] = useState(false);
+```
+
+The point is not the libraries — it's the discipline of putting each kind of state in its right home.
+
+## When in doubt, check the back button
+
+The back button is the cheapest correctness probe for state architecture. If hitting *back* loses your filters, your filters belong in the URL.
